@@ -65,7 +65,7 @@ def Search(URL):#上市搜索
         st.dataframe(df1,column_config={'代號':st.column_config.LinkColumn(help='跳轉至Yahoo股市頁面',disabled=True,display_text='https://tw\.stock\.yahoo\.com/quote/(.*?)\.TW/technical-analysis')})
     elif len(df1)==0:
         st.text('【上市】')
-        st.dataframe(df1,column_config={'代號':st.column_config.LinkColumn(help='跳轉至Yahoo股市頁面',disabled=True,display_text='https://tw\.stock\.yahoo\.com/quote/(.*?)\.TW/technical-analysis')})
+        st.write('查無此股票')
     else:
         df1=df1[np.logical_or(df1['最高']==High, df1['最低']==Low)]
         st.text('【上市】')
@@ -86,6 +86,3 @@ if st.button('搜尋'):
         else:
             Open=0
         Search(URL)
-    
-
-
