@@ -3,15 +3,16 @@ from io import StringIO
 import pandas as pd
 import numpy as np
 import json
-import time
 import streamlit as st
 from datetime import datetime
 
 st.set_page_config(page_title='台灣股票搜索小工具',initial_sidebar_state='expanded',page_icon='🔍')
 st.title('股票搜尋小工具')
-High = f'{st.number_input('請輸入最高價'):.2f}'
-Low = f'{st.number_input('請輸入最低價'):.2f}'
-Open = f'{st.number_input('請輸入開盤價'):.2f}'
+High=Low=Open=0.0
+
+high = st.number_input('請輸入最高價',min_value=0.0,value=None)
+low = st.number_input('請輸入最低價',min_value=0.0,value=None)
+open = st.number_input('請輸入開盤價',min_value=0.0,value=None)
 date=st.date_input('請選擇查詢日期')
 datestr=date.strftime('%Y%m%d')
 left_column, right_column=st.columns(2)
@@ -72,4 +73,19 @@ def Search(URL):#上市搜索
     SearchTpex(TpexURL)
 
 if st.button('搜尋'):
+        if high is not None: 
+            High=f'{high:.2f}' 
+        else: 
+            High=0
+        if low is not None: 
+            Low=f'{low:.2f}' 
+        else: 
+            Low=0
+        if open is not None:
+            Open=f'{open:.2f}'
+        else:
+            Open=0
         Search(URL)
+    
+
+
