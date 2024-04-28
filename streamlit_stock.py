@@ -32,18 +32,18 @@ def SearchTpex(TpexURL):#上櫃搜索
     df0.set_index(['名稱'],inplace=True)
     df0.index.name='證券名稱'
     df1 = df0
-    df1['代號'] = 'https://tw.stock.yahoo.com/quote/'+ df0['代號'] +'.TW/technical-analysis'
+    df1['代號'] = 'https://tw.stock.yahoo.com/quote/'+ df0['代號'] +'.TWO/technical-analysis'
 
     if len(df1)==0:
         st.text('【上櫃】')
         st.write('查無此股票')
     elif len(df1)==1:
         st.text('【上櫃】')
-        st.dataframe(df1,column_config={'代號':st.column_config.LinkColumn(help='跳轉至Yahoo股市頁面',disabled=True,display_text='https://tw\.stock\.yahoo\.com/quote/(.*?)\.TW/technical-analysis')})
+        st.dataframe(df1,column_config={'代號':st.column_config.LinkColumn(help='跳轉至Yahoo股市頁面',disabled=True,display_text='https://tw\.stock\.yahoo\.com/quote/(.*?)\.TWO/technical-analysis')})
     else:
         st.text('【上櫃】')
         df1=df1[np.logical_or(df1['最高']==High, df1['最低']==Low)]
-        st.dataframe(df1,column_config={'代號':st.column_config.LinkColumn(help='跳轉至Yahoo股市頁面',disabled=True,display_text='https://tw\.stock\.yahoo\.com/quote/(.*?)\.TW/technical-analysis')})
+        st.dataframe(df1,column_config={'代號':st.column_config.LinkColumn(help='跳轉至Yahoo股市頁面',disabled=True,display_text='https://tw\.stock\.yahoo\.com/quote/(.*?)\.TWO/technical-analysis')})
     
 @st.cache_data
 def postStock(URL):
