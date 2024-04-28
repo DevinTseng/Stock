@@ -8,11 +8,11 @@ import streamlit as st
 from datetime import datetime
 
 st.set_page_config(page_title='台灣股票搜索小工具',initial_sidebar_state='expanded',page_icon='🔍')
-st.sidebar.title('股票搜尋小工具')
-High = f'{st.sidebar.number_input('請輸入最高價'):.2f}'
-Low = f'{st.sidebar.number_input('請輸入最低價'):.2f}'
-Open = f'{st.sidebar.number_input('請輸入開盤價'):.2f}'
-date=st.sidebar.date_input('請選擇查詢日期')
+st.title('股票搜尋小工具')
+High = f'{st.number_input('請輸入最高價'):.2f}'
+Low = f'{st.number_input('請輸入最低價'):.2f}'
+Open = f'{st.number_input('請輸入開盤價'):.2f}'
+date=st.date_input('請選擇查詢日期')
 datestr=date.strftime('%Y%m%d')
 left_column, right_column=st.columns(2)
 TpexURL='https://www.tpex.org.tw/web/stock/aftertrading/daily_close_quotes/stk_quote_result.php?l=zh-tw&d='+str(int(datestr[0:4])-1911)+'/'+datestr[4:6]+'/'+datestr[6:8]
@@ -32,15 +32,15 @@ def SearchTpex(TpexURL):#上櫃搜索
     df1.index.name=''
     
     if len(df1)==0:
-        st.text('【上市】【上櫃】')
+        st.text('【上櫃】')
         st.write('查無此股票')
     elif len(df1)==1:
         st.text('【上櫃】')
-        st.write(df1)
+        st.dataframe(df1)
     else:
         st.text('【上櫃】')
         df1=df1[np.logical_or(df1['最高']==High, df1['最低']==Low)]
-        st.write(df1)
+        st.dataframe(df1)
     
 @st.cache_data
 def postStock(URL):
@@ -58,17 +58,17 @@ def Search(URL):#上市搜索
     
     if len(df1)==1:
         st.text('【上市】')
-        st.write(df1)
+        st.dataframe(df1)
     elif len(df1)==0:
-        SearchTpex(TpexURL)
-        return
+        st.text('【上市】')
+        st.write('查無此股票')
     else:
         df1=df1[np.logical_or(df1['最高']==High, df1['最低']==Low)]
         st.text('【上市】')
         st.write(df1)
     SearchTpex(TpexURL)
 
-if st.sidebar.button('搜尋'):
+if st.button('搜尋'):
         Search(URL)
     
 
