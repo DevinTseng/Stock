@@ -1,4 +1,4 @@
 FinMind
 plotly
 optuna
-ta-lib
+TA-Lib-Precompiled
