@@ -3,4 +3,5 @@ json
 plotly
 time
 optuna
-talib
+TA-Lib
+streamlit=1.38.0
