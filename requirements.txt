@@ -2,4 +2,4 @@ FinMind
 plotly
 optuna
 ta-lib-bin
-numpy
+numpy==1.26.4
