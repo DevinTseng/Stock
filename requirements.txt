@@ -1,4 +1,4 @@
 FinMind
 plotly
 optuna
-ta-lib-bin-0.4.26
+TA-Lib-binary
