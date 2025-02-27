@@ -4,4 +4,3 @@ plotly
 time
 optuna
 TA-Lib
-streamlit=1.38.0
