@@ -3,3 +3,4 @@ plotly
 optuna
 ta-lib-bin
 numpy==1.26.4
+matplotlib
