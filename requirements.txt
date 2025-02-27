@@ -2,3 +2,4 @@ FinMind
 plotly
 optuna
 ta-lib-bin
+numpy
