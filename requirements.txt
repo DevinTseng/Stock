@@ -1,0 +1,6 @@
+FinMind
+json
+plotly
+time
+optuna
+talib
