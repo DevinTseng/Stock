@@ -164,7 +164,7 @@ row1.markdown('''
               ''')
 row1.write('---')
 row1.write('詳細推導過程可以看這邊：')
-row1.page_link(page='https://github.com/DevinTseng/Stock/tree/BearBull?tab=readme-ov-file#開發思路',label='**BearBull開發思路**',icon = '✏️')
+row1.page_link(page='https://github.com/DevinTseng/Stock/tree/BearBull?tab=readme-ov-file#how-開發思路',label='**BearBull開發思路**',icon = '✏️')
 row1.write('')
 row1.markdown(''':red-background[⚠️ 注意：  所求出的權重組合僅代表在 $x$ 次試驗後機器找到的最優解，並不代表終極答案]''')
 
