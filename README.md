@@ -108,4 +108,4 @@ In general, this BearBull presents a good indication before the 'summit' and the
    
 11. 結合大語言模型分析新聞語義，給出基本面及消息面評價指標
 
-    Incorporate the LLM models to analyze the semantics of news, making more general advices for investments.
+    Incorporate the LLM models to analyze the semantics of news, giving more general advices for investments.
