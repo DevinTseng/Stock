@@ -34,9 +34,9 @@ This project is deployed on Streamlit, you can access it through the URL above.
 
 有了這項技術，我想也許我可以換個道路，不用求出具體的預測股價，只要能估計目前時間點的賺錢效率就好了~
 
-The preliminary function stemmed from my mom's request to find certain stock based on the given prices, cause the stock analysist usually hid the stock code, for the sake of luring you to join their membership. Thus, the 'Search by Price' function was born. Since then, I started to figure out how to make more use of the stock data with Deep-Learning and Neural models.
+The preliminary function stemmed from my mom's request to find certain stock based on the given prices, because the stock analysist usually hid the stock code for the sake of luring you to join their membership. Thus, the 'Search by Price' function was born. Since then, I started to figure out how to make the most use of the stock data with Deep-Learning and Neural models.
 
-At first, I tried the Meta's Prophet model, which is a great model for TSF (Times Series Forecasting), actually it performed quite nice in catching and predicting the stocks' trends, but the results were still far away for making accurate investment suggestions. In spite of not getting so wel with model predicting, I came to know the great tool, Optuna in model training. Optuna is a commonly used framework for finding the best hyper-parameters in model training, with this tool, something different popped out in my head...
+At first, I tried the Meta's Prophet model, which is a great model for TSF (Times Series Forecasting), actually it performed quite nice in catching and predicting the stocks' trends, but the results were still far away for making accurate investment suggestions. In spite of not getting so wel with model predicting, I came to know the great tool, Optuna, in model training. Optuna is a commonly used framework for finding the best hyper-parameters in model training, with this tool, something different popped out in my head...
 
 
 ## How 開發思路
@@ -46,7 +46,7 @@ At first, I tried the Meta's Prophet model, which is a great model for TSF (Time
 到底哪個老師 (型態分析) 說得對呢? 
 那好吧，我給每個型態分析給出的分數加權求和，定義一個指標叫 *BearBull*，它的本質應該表示在某一個日期該股票應該做空還是做多 (型態分析給出分值的意義) 。
 
-Actually our mission is to make investments more accurately and efficiently, so why not just setup an index to indicate the proficiency of sole investment? 
+Actually our mission is to make investments more accurately and efficiently, so why not just setup an index to indicate the profitability of sole investment? 
 
 First of all, how to measure the pattern of the stocks? I browse through the document of the well-used TA-Lib, and I found this, PatternRecognition! It can measure the trends with spcified pattern function and retrurn a figure indicating whether to buy a stock on one date. 
 
